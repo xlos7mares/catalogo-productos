@@ -12,9 +12,10 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+    /* Fondo claro y textos oscuros legibles */
     .stApp {
-        background-color: #070b14;
-        color: #f1f5f9;
+        background-color: #f8fafc;
+        color: #0f172a;
     }
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
@@ -24,9 +25,11 @@ st.markdown("""
         padding-bottom: 2rem;
         max-width: 1150px;
     }
+
+    /* Encabezado luminoso en tonos celestes */
     .hero-box {
-        background: linear-gradient(135deg, #0d172a 0%, #112240 100%);
-        border: 1px solid #1e3a5f;
+        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        border: 1px solid #7dd3fc;
         border-radius: 16px;
         padding: 24px;
         margin-bottom: 22px;
@@ -35,27 +38,36 @@ st.markdown("""
     .hero-title {
         font-size: 2rem;
         font-weight: 800;
-        color: #ffffff;
+        color: #0c4a6e;
         margin: 0 0 6px 0;
     }
     .hero-subtitle {
         font-size: 1rem;
-        color: #94a3b8;
+        color: #0369a1;
         margin: 0;
     }
+
+    /* Etiquetas de campos y selectores */
+    label, .stTextInput label, .stSelectbox label {
+        color: #0f172a !important;
+        font-weight: 600 !important;
+    }
+
+    /* Contador de imagen */
     .foto-contador {
         text-align: center;
-        font-size: 0.85rem;
-        color: #94a3b8;
+        font-size: 0.88rem;
+        color: #0369a1;
+        font-weight: 600;
         margin: 6px 0 10px 0;
     }
 
-    /* Estilo visible y contrastado para botones st.button en modo oscuro */
+    /* Botones celestes bien visibles en reposo y al pasar el cursor */
     .stButton > button {
-        background-color: #132238 !important;
-        color: #f8fafc !important;
-        border: 1px solid #2b4c7e !important;
-        border-radius: 8px !important;
+        background-color: #0284c7 !important;
+        color: #ffffff !important;
+        border: 1px solid #0369a1 !important;
+        border-radius: 9px !important;
         font-weight: 700 !important;
         padding: 0.45rem 0.75rem !important;
         transition: all 0.15s ease !important;
@@ -63,24 +75,26 @@ st.markdown("""
     .stButton > button p,
     .stButton > button span,
     .stButton > button div {
-        color: #f8fafc !important;
+        color: #ffffff !important;
     }
     .stButton > button:hover {
-        background-color: #1d3557 !important;
-        border-color: #00d4ff !important;
+        background-color: #0369a1 !important;
+        border-color: #0c4a6e !important;
         color: #ffffff !important;
     }
     .stButton > button:focus,
     .stButton > button:active {
-        background-color: #1d3557 !important;
-        border-color: #39ff14 !important;
+        background-color: #0ea5e9 !important;
+        border-color: #0284c7 !important;
         color: #ffffff !important;
     }
 
+    /* Etiqueta de categoría, título, descripción y precio */
     .product-badge {
         display: inline-block;
-        background-color: rgba(0, 212, 255, 0.12);
-        color: #00d4ff;
+        background-color: #e0f2fe;
+        color: #0369a1;
+        border: 1px solid #bae6fd;
         font-size: 0.75rem;
         font-weight: 700;
         padding: 3px 10px;
@@ -92,36 +106,39 @@ st.markdown("""
     .product-title {
         font-size: 1.15rem;
         font-weight: 700;
-        color: #f8fafc;
+        color: #0f172a;
         margin: 0 0 6px 0;
     }
     .product-desc {
         font-size: 0.9rem;
-        color: #cbd5e1;
+        color: #334155;
         margin: 0 0 12px 0;
-        line-height: 1.4;
+        line-height: 1.45;
     }
     .product-price {
         font-size: 1.25rem;
         font-weight: 800;
-        color: #39ff14;
+        color: #0284c7;
         margin-bottom: 14px;
     }
+
+    /* Botón alegre de consulta por WhatsApp */
     .wa-btn {
         display: block;
         width: 100%;
         text-align: center;
-        background-color: #25d366;
-        color: #051b0e !important;
+        background-color: #16a34a;
+        color: #ffffff !important;
         font-weight: 800;
         text-decoration: none;
         padding: 10px 14px;
         border-radius: 10px;
         font-size: 0.95rem;
         box-sizing: border-box;
+        transition: background-color 0.15s ease;
     }
     .wa-btn:hover {
-        background-color: #20bd5a;
+        background-color: #15803d;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -281,11 +298,11 @@ else:
                 """, unsafe_allow_html=True)
 
 components.html("""
-<div style="text-align:center; margin-top:10px; font-family:sans-serif;">
-    <button onclick="copiarLink()" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; padding:8px 16px; border-radius:8px; cursor:pointer; font-size:13px;">
+<div style="text-align:center; margin-top:12px; font-family:sans-serif;">
+    <button onclick="copiarLink()" style="background:#0284c7; color:#ffffff; border:1px solid #0369a1; padding:8px 16px; border-radius:9px; cursor:pointer; font-size:13px; font-weight:700;">
         Copiar enlace del catálogo
     </button>
-    <span id="msg" style="color:#39ff14; font-size:13px; margin-left:8px;"></span>
+    <span id="msg" style="color:#0284c7; font-size:13px; margin-left:8px; font-weight:700;"></span>
 </div>
 <script>
 function copiarLink() {
