@@ -1,1 +1,4 @@
-
+nombre: Revestimiento Wall Panel WPC 290x20 cm Exterior Simil Madera Marrón
+categoria: Revestimientos
+precio: Consultar
+descripcion: Panel WPC para exterior de 290x20 cm, terminación simil madera marrón. Ideal para fachadas, muros o detalles decorativos.
