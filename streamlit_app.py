@@ -98,7 +98,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Evitar que el navegador muestre sugerencias guardadas en el input de búsqueda
+# Evitar sugerencias guardadas del navegador en el campo de búsqueda
 components.html("""
 <script>
 (function() {
@@ -198,7 +198,14 @@ filtrados = [
     )
 ]
 
-st.write(f"Mostrando **{len(filtrados)}** producto(s)")
+# Encabezado encima de la grilla con el modelo del producto
+if len(filtrados) == 1:
+    st.markdown(f"**{filtrados[0]['nombre']}**")
+elif len(filtrados) > 1:
+    nombres = ", ".join(p["nombre"] for p in filtrados)
+    st.markdown(f"**{nombres}**")
+else:
+    st.markdown("**Sin productos para mostrar**")
 
 if not filtrados:
     st.info("No hay productos cargados o ninguno coincide con el filtro.")
@@ -218,7 +225,7 @@ else:
                     pos_actual = st.session_state[state_key]
                     st.image(fotos[pos_actual], use_container_width=True)
                     st.markdown(
-                        f'<div class="foto-contador">Foto {pos_actual + 1} de {len(fotos)} · {os.path.basename(fotos[pos_actual])}</div>',
+                        f'<div class="foto-contador">Imagen {pos_actual + 1} de {len(fotos)}</div>',
                         unsafe_allow_html=True
                     )
 
