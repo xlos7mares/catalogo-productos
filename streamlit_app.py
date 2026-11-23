@@ -49,6 +49,34 @@ st.markdown("""
         color: #94a3b8;
         margin: 6px 0 10px 0;
     }
+
+    /* Estilo visible y contrastado para botones st.button en modo oscuro */
+    .stButton > button {
+        background-color: #132238 !important;
+        color: #f8fafc !important;
+        border: 1px solid #2b4c7e !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        padding: 0.45rem 0.75rem !important;
+        transition: all 0.15s ease !important;
+    }
+    .stButton > button p,
+    .stButton > button span,
+    .stButton > button div {
+        color: #f8fafc !important;
+    }
+    .stButton > button:hover {
+        background-color: #1d3557 !important;
+        border-color: #00d4ff !important;
+        color: #ffffff !important;
+    }
+    .stButton > button:focus,
+    .stButton > button:active {
+        background-color: #1d3557 !important;
+        border-color: #39ff14 !important;
+        color: #ffffff !important;
+    }
+
     .product-badge {
         display: inline-block;
         background-color: rgba(0, 212, 255, 0.12);
@@ -198,7 +226,6 @@ filtrados = [
     )
 ]
 
-# Encabezado encima de la grilla con el modelo del producto
 if len(filtrados) == 1:
     st.markdown(f"**{filtrados[0]['nombre']}**")
 elif len(filtrados) > 1:
